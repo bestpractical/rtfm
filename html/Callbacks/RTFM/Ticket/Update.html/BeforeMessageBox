@@ -16,16 +16,21 @@
 %# 
 %# END LICENSE BLOCK
 
+% my %uri;
+% $uri{$_}++ for split ' ', $ARGS{$ARGS{'id'}.'-RefersTo'};
+% my $TicketObj = LoadTicket($ARGS{'id'});
+% $uri{$_->TargetURI->Resolver->AsString}++ while $_ = $TicketObj->RefersTo->Next;
 % foreach my $arg (keys %ARGS) {
 % if ($arg =~ /^RTFM-Include-Article-(\d+)$/) {
 % my $art = RT::FM::Article->new($session{'CurrentUser'});
 % $art->Load($1);
-% if ($art->Id) { 
-<input type="hidden" name="<%$ARGS{'id'}%>-RefersTo" value="<%$art->URI%>">
+% if ($art->Id) {
+% $uri{$art->URI}++;
 % }
 
 % }
 %}
+<input type="hidden" name="<%$ARGS{'id'}%>-RefersTo" value="<% join(' ',grep {$_} sort keys %uri) %>">
 <table>
 <tr><td><&|/l&>Search for RTFM articles matching</&></td>
 <td><input size=20 name="RTFM_Content"></td>
