@@ -36,7 +36,7 @@
 <%$content%>
 % } else {
 % my $val = $values->Next;
-% my $content = $val->Content;
+% my $content = $val ? $val->Content : "";
 % if ($content =~ /<(.{1,5})>/) {
 %    $content = de_htmlify($content);
 % }
