@@ -200,7 +200,6 @@ sub LimitUpdatedBy {
 
 
 # {{{ LimitToParent ID
-
 =item LimitToParent ID
 
 Limit the returned set of articles to articles which are children

@@ -1,4 +1,4 @@
-# Oracle doesn't need new acls
+# mysql doesn't need new acls
 sub acl {
 	return ('select id from Users where id = 1');
 }
