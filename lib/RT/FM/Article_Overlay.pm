@@ -1085,7 +1085,7 @@ sub DeleteCustomFieldValue {
 
     my $values = RT::FM::ArticleCFValueCollection->new($self->CurrentUser);
     $values->LimitToArticle($self->id);
-    $values->LimitToCustomField($self->id);
+    $values->LimitToCustomField($cf->id);
     my $CFObjectValue = $values->HasEntryWithContent($args{'Content'}); 
 
     #if we can\'t find it, bail
