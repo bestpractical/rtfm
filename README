@@ -22,16 +22,13 @@ from bestpractical.com) Best Practical sells support and customization for RT
 and RTFM.  Feel free to contact us at sales@bestpractical.com if you have
 any questions about our service offerings.
 
-RTFM requires Text::WikiFormat in addition to RT's standartd dependencies.
-You can install it by executing the command:
+RTFM requires Text::WikiFormat, HTML::TreeBuilder, and HTML::Formatter in
+addition to RT's standard dependencies.  You can install them by executing the
+commands:
 
     perl -MCPAN -e'install Text::WikiFormat'
-
-RTFM requires HTML::TreeBuilder and HTML::Format in addition to RT's
-standartd dependencies.  You can install it by executing the command:
-
     perl -MCPAN -e'install HTML::TreeBuilder'
-    perl -MCPAN -e'install HTML::Format'
+    perl -MCPAN -e'install HTML::Formatter'
 
 
 Upgrade instructions (From an earlier 2.0.x release):
