@@ -6,7 +6,6 @@ use warnings;
 use Test::More tests => 39;
 BEGIN { require 't/utils.pl' }
 
-use lib "/opt/rt3/lib";
 use RT;
 RT::LoadConfig;
 RT::Init;
@@ -20,11 +19,9 @@ use_ok 'RT::FM::Class';
 use_ok 'RT::FM::Topic';
 use_ok 'RT::FM::Article';
 
-BEGIN {
 $RT::WebPort ||= '80';
 $RT::WebPath ||= ''; # Shut up a warning
-};
-use constant BaseURL => "http://localhost:".$RT::WebPort.$RT::WebPath."/";
+my $url = "http://localhost:".$RT::WebPort.$RT::WebPath."/";
 
 # Variables to test return values
 my ($ret, $msg);
@@ -154,7 +151,6 @@ ok($ret, "Test ticket for articles created: $msg");
 
 #### Right.  That's our data.  Now begin the real testing.
 
-my $url = BaseURL;
 my $m = Test::WWW::Mechanize->new;
 isa_ok($m, 'Test::WWW::Mechanize');
 ok(1, "Connecting to ".$url);
