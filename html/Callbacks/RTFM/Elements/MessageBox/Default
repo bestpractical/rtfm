@@ -32,13 +32,14 @@ foreach my $arg ( keys %ARGS ) {
     next unless $article && $article->id;
 
     my $Ticket = $ARGS{Ticket};
-    if ( !$Ticket and $ARGS{id} and $ARGS{id} ne 'new' ) {
+    if ( !($Ticket and $Ticket->id) and $ARGS{id} and $ARGS{id} ne 'new' ) {
         $Ticket = RT::Ticket->new($session{'CurrentUser'});
-        my ($id,$msg) = $Ticket->Load($ARGS{id});
-        unless ($id) {
-            $RT::Logger->error("Couldn't load ticket $ARGS{id}: $msg")
+        $Ticket->Load($ARGS{id});
+        unless ($Ticket->id) {
+            $RT::Logger->error("Couldn't load ticket #". $ARGS{id});
         }
     }
+    $Ticket = undef unless $Ticket->id;
 
 
     $m->comp('/RTFM/Article/Elements/Preformatted',
