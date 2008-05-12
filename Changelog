@@ -1,5 +1,11 @@
 2.2.2
 
+NEW
+===
+
+ * add new callback ParseContent in
+   html/RTFM/Article/Elements/Preformatted
+
 CLEANUPS
 ========
 
