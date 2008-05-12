@@ -60,9 +60,7 @@ Further reading:
 
 You can read pod files using perldoc utility that comes with perl.
 
-1) lib/RT/FM/Introduction.pod - quick overview
-
-2) lib/RT/FM/Config.pod - RTFM's config options
+* lib/RT/FM/Introduction.pod - quick overview
 
 Bugs reporting and discussion lists:
 -----------------------------------------------------
