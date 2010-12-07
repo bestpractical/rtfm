@@ -169,7 +169,7 @@ t/3upload-customfields.t
 t/Article_Overlay.pm.t
 t/ArticleCollection_Overlay.pm.t
 t/Class_Overlay.pm.t
-t/lib/RT/FM/Test.pm
+t/lib/RT/FM/Test.pm.in
 t/URI_a.t
 t/URI_fsck_com_rtfm.t
 TODO
