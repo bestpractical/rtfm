@@ -46,7 +46,7 @@
 %# 
 %# END BPS TAGGED BLOCK }}}
 <%init>
-if ( $OriginalSearch->{SearchType} eq 'Article' && $OriginalSearch->{args} 
+if ( ($OriginalSearch->{SearchType} || '') eq 'Article' && $OriginalSearch->{args} 
     && ref $OriginalSearch->{args} eq 'HASH' ) {
     %$OriginalSearch = ( %$OriginalSearch, %{$OriginalSearch->{args}} );
     delete $OriginalSearch->{args};
