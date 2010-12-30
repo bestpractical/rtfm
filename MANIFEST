@@ -70,6 +70,7 @@ html/Callbacks/RTFM/Ticket/Create.html/BeforeCreate
 html/Callbacks/RTFM/Ticket/Create.html/BeforeMessageBox
 html/Callbacks/RTFM/Ticket/Elements/Tabs/Default
 html/Callbacks/RTFM/Ticket/Update.html/BeforeMessageBox
+html/Elements/RT__FM__ClassCollection/ColumnMap
 html/NoAuth/webrtfm.css
 html/RTFM/Article/Delete.html
 html/RTFM/Article/Display.html
@@ -109,6 +110,7 @@ html/RTFM/Elements/Tabs
 html/RTFM/Elements/UpdatedArticles
 html/RTFM/index.html
 html/RTFM/Topics.html
+html/Search/Elements/Article
 html/SelfService/Article/autohandler
 html/SelfService/Article/Display.html
 html/SelfService/Article/Search.html
