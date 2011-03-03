@@ -67,6 +67,7 @@
 
 =cut
 
+use strict;
 no warnings 'redefine';
 package RT::FM::ObjectTopicCollection;
 

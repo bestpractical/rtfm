@@ -58,6 +58,7 @@
 
 =cut
 
+use strict;
 no warnings 'redefine';
 package RT::FM::SearchBuilder;
 use base qw(RT::SearchBuilder);
@@ -116,7 +117,7 @@ sub HasEntry {
     my @items = grep {$_->Id == $id } @{$self->ItemsArrayRef};
    
     if ($#items > 1) {
-	die "$self HasEntry had a list with more than one of $item in it. this can never happen";
+	die "$self HasEntry had a list with more than one of @items in it. this can never happen";
     }
     
     if ($#items == -1 ) {
