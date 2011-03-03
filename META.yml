@@ -21,11 +21,11 @@ no_index:
 requires:
   HTML::FormatText: 0
   HTML::TreeBuilder: 0
-  RT: 3.004002
+  RT: 3.4.2
   Text::WikiFormat: 0
   Time::ParseDate: 0
   Tree::Simple: 0
   perl: 5.8.3
 resources:
   license: http://opensource.org/licenses/gpl-license.php
-version: 2.4.3
+version: 2.4.HEAD
