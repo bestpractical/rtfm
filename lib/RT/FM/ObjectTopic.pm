@@ -65,6 +65,7 @@ RT::FM::ObjectTopic
 
 =cut
 
+use strict;
 no warnings 'redefine';
 package RT::FM::ObjectTopic;
 use RT::FM::Record; 

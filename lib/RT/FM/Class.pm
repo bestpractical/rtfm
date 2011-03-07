@@ -65,6 +65,7 @@ RT::FM::Class
 
 =cut
 
+use strict;
 no warnings 'redefine';
 package RT::FM::Class;
 use RT::FM::Record; 

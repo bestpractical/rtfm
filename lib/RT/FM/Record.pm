@@ -60,6 +60,7 @@
 =cut
 
 
+use strict;
 no warnings 'redefine';
 package RT::FM::Record;
 use  base qw(RT::Record);
