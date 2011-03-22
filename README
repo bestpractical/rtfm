@@ -18,8 +18,9 @@ Installation instructions:
 
 NOTE that upgrade steps are described in UPGRADING
 
-1) Install RT 3.4.2 or newer (Do not use this with 3.8.0 as
-   there are incompatibilities)
+1) Install RT 3.4.2 or newer.
+   Do not use this with 3.8.0 as there are incompatibilities.
+   Any other release of RT 3.8 is fine.
 
 2) Once RT appears to be happily installed, cd into the directory
    where you unpacked RTFM.
