@@ -50,7 +50,7 @@
 
 <%INIT>
 
-my $ClassObj = new RT::FM::Class($session{'CurrentUser'});
+my $ClassObj = RT::FM::Class->new($session{'CurrentUser'});
 $ClassObj->Load($ARGS{'id'}) || $m->comp("/RTFM/Elements/Error", Why => "Couldn't load class '$id'");
 
 my $title = $Modify 

@@ -109,7 +109,7 @@ sub Delete {
         return ( 0, $self->loc("Permission Denied") );
     }
 
-    my $kids = new RT::FM::TopicCollection($self->CurrentUser);
+    my $kids = RT::FM::TopicCollection->new($self->CurrentUser);
     $kids->LimitToKids($self->Id);
     while (my $topic = $kids->Next) {
         $topic->setParent($self->Parent);
@@ -138,7 +138,7 @@ sub DeleteAll {
     }
 
     $self->SUPER::Delete(@_);
-    my $kids = new RT::FM::TopicCollection($self->CurrentUser);
+    my $kids = RT::FM::TopicCollection->new($self->CurrentUser);
     $kids->LimitToKids($self->Id);
     while (my $topic = $kids->Next) {
         $topic->DeleteAll;
@@ -161,7 +161,7 @@ Returns the parent Topic of this one.
 sub ParentObj {
   my $self = shift;
   my $id = $self->Parent;
-  my $obj = new RT::FM::Topic($self->CurrentUser);
+  my $obj = RT::FM::Topic->new($self->CurrentUser);
   $obj->Load($id);
   return $obj;
 }

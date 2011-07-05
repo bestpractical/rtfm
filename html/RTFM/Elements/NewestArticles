@@ -71,7 +71,7 @@
 my $rows = 10;
 my $i;
 my $MyArticles;
-$MyArticles = new RT::FM::ArticleCollection ($session{'CurrentUser'});
+$MyArticles = RT::FM::ArticleCollection->new($session{'CurrentUser'});
 $MyArticles->UnLimit;
 $MyArticles->RowsPerPage($rows);
 $MyArticles->OrderBy(FIELD => 'LastUpdated', ORDER => 'DESC');

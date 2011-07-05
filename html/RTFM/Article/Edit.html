@@ -297,7 +297,7 @@ else {
     if ( $ARGS{'EditTopics'} ) {
         $topics{$_}++ for @{ $ARGS{'Topics'} };
         my $objTopics =
-          new RT::FM::ObjectTopicCollection( $session{'CurrentUser'} );
+          RT::FM::ObjectTopicCollection->new( $session{'CurrentUser'} );
         $objTopics->LimitToObject($ArticleObj);
         while ( my $t = $objTopics->Next ) {
             $topics{ $t->Topic }--;

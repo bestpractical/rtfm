@@ -334,7 +334,7 @@ routine will not recurse and will not find grandchildren, great-grandchildren, u
 
 sub Children {
     my $self = shift;
-    my $kids = new RT::FM::ArticleCollection( $self->CurrentUser );
+    my $kids = RT::FM::ArticleCollection->new( $self->CurrentUser );
 
     unless ( $self->CurrentUserHasRight('ShowArticle') ) {
         $kids->LimitToParent( $self->Id );
@@ -445,7 +445,7 @@ sub URIObj {
 sub Topics {
     my $self = shift;
 
-    my $topics = new RT::FM::ObjectTopicCollection( $self->CurrentUser );
+    my $topics = RT::FM::ObjectTopicCollection->new( $self->CurrentUser );
     if ( $self->CurrentUserHasRight('ShowArticle') ) {
         $topics->LimitToObject($self);
     }
@@ -463,7 +463,7 @@ sub AddTopic {
         return ( 0, $self->loc("Permission Denied") );
     }
 
-    my $t = new RT::FM::ObjectTopic( $self->CurrentUser );
+    my $t = RT::FM::ObjectTopic->new( $self->CurrentUser );
     my ($tid) = $t->Create(
         Topic      => $args{'Topic'},
         ObjectType => ref($self),
@@ -487,7 +487,7 @@ sub DeleteTopic {
         return ( 0, $self->loc("Permission Denied") );
     }
 
-    my $t = new RT::FM::ObjectTopic( $self->CurrentUser );
+    my $t = RT::FM::ObjectTopic->new( $self->CurrentUser );
     $t->LoadByCols(
         Topic      => $args{'Topic'},
         ObjectId   => $self->Id,

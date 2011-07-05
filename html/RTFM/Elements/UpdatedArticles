@@ -72,7 +72,7 @@
 my $rows = 10;
 my $i;
 my $MyArticles;
-$MyArticles = new RT::FM::ArticleCollection ($session{'CurrentUser'});
+$MyArticles = RT::FM::ArticleCollection->new($session{'CurrentUser'});
 $MyArticles->RowsPerPage($rows);
 $MyArticles->Limit(FIELD => 'Created', OPERATOR => '!=', VALUE => 'LastUpdated', QUOTEVALUE => 0 );
 $MyArticles->OrderBy(FIELD => 'Created', ORDER => 'DESC');

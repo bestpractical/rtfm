@@ -7,7 +7,7 @@ use lib 't/lib';
 use RT::FM::Test tests => 43;
 
 use_ok 'RT::FM::System';
-my $sys = new RT::FM::System;
+my $sys = RT::FM::System->new;
 isa_ok $sys, 'RT::FM::System';
 is $sys->Id, 1;
 

@@ -47,7 +47,7 @@
 <& /RTFM/Article/Elements/Tabs, current_tab => "RTFM/Article/Search.html", Title => loc("Search for articles") &>
 
 % unless ( keys %ARGS ) {
-%   my $Classes=new RT::FM::ClassCollection($session{'CurrentUser'});
+%   my $Classes=RT::FM::ClassCollection->new($session{'CurrentUser'});
 %   $Classes->LimitToEnabled();
 <table width="100%" border="0">
 <tr>

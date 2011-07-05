@@ -59,12 +59,12 @@ my $cf = RT::CustomField->new( $RT::SystemUser );
 }
 
 my $article1name = 'TestArticle1'.$suffix;
-my $article1 = new RT::FM::Article($RT::SystemUser);
+my $article1 = RT::FM::Article->new($RT::SystemUser);
 $article1->Create( Name => $article1name, Summary => 'Test', Class => $class->Id);
 $article1->AddCustomFieldValue(Field => $cf->Id, Value => 'Value1');
 
 my $article2name = 'TestArticle2'.$suffix;
-my $article2 = new RT::FM::Article($RT::SystemUser);
+my $article2 = RT::FM::Article->new($RT::SystemUser);
 $article2->Create( Name => $article2name, Summary => 'Test', Class => $class->Id);
 $article2->AddCustomFieldValue(Field => $cf->Id, Value => 'Value2');
 
@@ -78,7 +78,7 @@ $article2->AddCustomFieldValue(Field => $cf->Id, Value => 'Value2');
 }
 
 {
-    my $articles = new RT::FM::ArticleCollection($RT::SystemUser);
+    my $articles = RT::FM::ArticleCollection->new($RT::SystemUser);
     $articles->UnLimit;
     $articles->Limit( FIELD => "Class", SUBCLAUSE => 'ClassMatch', VALUE => $class->Id);
     $articles->LimitCustomField( FIELD => $cf, VALUE => 'Value1' );    
@@ -86,7 +86,7 @@ $article2->AddCustomFieldValue(Field => $cf->Id, Value => 'Value2');
 }
 
 {
-    my $articles = new RT::FM::ArticleCollection($RT::SystemUser);
+    my $articles = RT::FM::ArticleCollection->new($RT::SystemUser);
     $articles->UnLimit( );
     $articles->Limit( FIELD => "Class", SUBCLAUSE => 'ClassMatch', VALUE => $class->Id);
     $articles->LimitCustomField( FIELD => $cf->Name, VALUE => 'Value1' );

@@ -169,7 +169,7 @@ for my $k (keys %ARGS) {
     }
 }
 
-my $topics = new RT::FM::TopicCollection($session{'CurrentUser'});
+my $topics = RT::FM::TopicCollection->new($session{'CurrentUser'});
 $topics->LimitToObject($RootObj);
 $topics->OrderByCols({FIELD => 'Parent'}, {FIELD => 'id'});
 

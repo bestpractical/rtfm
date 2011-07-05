@@ -66,7 +66,7 @@ unless ($OnlyThisClass) {
     unless ($topic->ObjectId == $class) {
       $class = $topic->ObjectId;
       $m->print("</optgroup>\n");
-      my $c = new RT::FM::Class($session{'CurrentUser'});
+      my $c = RT::FM::Class->new($session{'CurrentUser'});
       $c->Load($topic->ObjectId);
       $m->print("<optgroup label=\"".$c->Name."\">\n");
     }
@@ -82,14 +82,14 @@ unless ($OnlyThisClass) {
 <%INIT>
 use Tree::Simple;
 
-my $inClass = new RT::FM::TopicCollection($session{'CurrentUser'});
+my $inClass = RT::FM::TopicCollection->new($session{'CurrentUser'});
 # global topics should always be available
 push @Classes,$RT::FM::System unless grep { $_ == $RT::FM::System } @Classes;
 $inClass->LimitToObject($_) for @Classes;
 $inClass->OrderByCols({FIELD => 'Name'});
 my $inTree = buildTree($inClass);
 
-my $otherClass = new RT::FM::TopicCollection($session{'CurrentUser'});
+my $otherClass = RT::FM::TopicCollection->new($session{'CurrentUser'});
 if (@Classes) {
   $otherClass->Limit(FIELD => 'ObjectType', VALUE => 'RT::FM::Class');
   for (@Classes) {
@@ -100,7 +100,7 @@ if (@Classes) {
 }
 my $otherTree = buildTree($otherClass);
 
-my $articleTopics = new RT::FM::ObjectTopicCollection($session{'CurrentUser'});
+my $articleTopics = RT::FM::ObjectTopicCollection->new($session{'CurrentUser'});
 $articleTopics->LimitToObject($ArticleObj);
 my %topics;
 while (my $topicObj = $articleTopics->Next) {
@@ -139,7 +139,7 @@ sub buildTree {
 
 </%INIT>
 <%ARGS>
-$ArticleObj => new RT::FM::Article($session{'CurrentUser'})
+$ArticleObj => RT::FM::Article->new($session{'CurrentUser'})
 @Classes => ()
 @Topics => ()
 $OnlyThisClass => undef

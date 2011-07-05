@@ -94,7 +94,7 @@ $current_subtab, Title => $title &>
 
 <%INIT>
 
-my $ClassObj = new RT::FM::Class($session{'CurrentUser'});
+my $ClassObj = RT::FM::Class->new($session{'CurrentUser'});
 my  ($title, @results, $Disabled);
 
 if ($Create) {

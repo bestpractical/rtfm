@@ -74,7 +74,7 @@
 </table>
 <%INIT>
 my $caption;
-my $Classes = new RT::FM::ClassCollection($session{'CurrentUser'});
+my $Classes = RT::FM::ClassCollection->new($session{'CurrentUser'});
 my @allowed_classes;
 
 if ($FindDisabledClasses) {
