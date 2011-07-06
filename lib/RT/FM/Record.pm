@@ -61,7 +61,7 @@
 
 
 use strict;
-no warnings 'redefine';
+use warnings;
 package RT::FM::Record;
 use  base qw(RT::Record);
 use RT::FM;

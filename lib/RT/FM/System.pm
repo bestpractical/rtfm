@@ -64,11 +64,11 @@ In the future, there will probably be other API goodness encapsulated here.
 =cut
 
 
-no warnings 'redefine';
+use strict;
+use warnings;
 package RT::FM::System;
 use RT::ACL;
 use base qw /RT::Base/;
-use strict;
 use vars qw/ $RIGHTS/;
 
 

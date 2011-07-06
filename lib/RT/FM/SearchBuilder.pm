@@ -59,7 +59,7 @@
 =cut
 
 use strict;
-no warnings 'redefine';
+use warnings;
 package RT::FM::SearchBuilder;
 use base qw(RT::SearchBuilder);
 use RT::FM;

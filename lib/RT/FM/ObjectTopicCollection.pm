@@ -68,7 +68,7 @@
 =cut
 
 use strict;
-no warnings 'redefine';
+use warnings;
 package RT::FM::ObjectTopicCollection;
 
 use RT::FM::SearchBuilder;
