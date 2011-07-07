@@ -131,7 +131,7 @@ sub Create {
         foreach my $value (@vals) {
 
             my ( $cfid, $cfmsg ) = $self->_AddCustomFieldValue(
-                (UNIVERSAL::isa( $value => 'HASH' )
+                ( ( ref($value) eq 'HASH' )
                     ? %$value
                     : (Value => $value)
                 ),
