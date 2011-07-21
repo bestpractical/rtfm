@@ -125,7 +125,7 @@ sub Create {
     # {{{ Add custom fields
 
     foreach my $key ( keys %args ) {
-        $key =~ /CustomField-(.*)$/ or next;
+        next unless ( $key =~ /CustomField-(.*)$/ );
         my $cf   = $1;
         my @vals = ref( $args{$key} ) eq 'ARRAY' ? @{ $args{$key} } : ( $args{$key} );
         foreach my $value (@vals) {
