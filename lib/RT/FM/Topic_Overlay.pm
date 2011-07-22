@@ -88,7 +88,7 @@ sub Create {
                                             EquivObjects => [ $RT::FM::System, $obj ],
                                            ) );
 
-    $self->SUPER::Create(@_);
+    return $self->SUPER::Create(@_);
 }
 
 # }}}
@@ -202,7 +202,7 @@ sub _Set {
     unless ( $self->CurrentUserHasRight('AdminTopics') ) {
         return ( 0, $self->loc("Permission Denied") );
     }
-    $self->SUPER::_Set(@_);
+    return $self->SUPER::_Set(@_);
 }
 
 # }}}
