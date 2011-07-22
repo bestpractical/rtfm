@@ -69,10 +69,10 @@ sub Load {
 
     return unless $id;
     if ( $id =~ /^\d+$/ ) {
-        $self->SUPER::Load($id);
+        return $self->SUPER::Load($id);
     }
     else {
-        $self->LoadByCols( Name => $id );
+        return $self->LoadByCols( Name => $id );
     }
 }
 
@@ -153,7 +153,7 @@ sub Create {
         return ( 0, $self->loc('Permission Denied') );
     }
 
-    $self->SUPER::Create(
+    return $self->SUPER::Create(
         Name        => $args{'Name'},
         Description => $args{'Description'},
         SortOrder   => $args{'SortOrder'},
