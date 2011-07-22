@@ -146,13 +146,7 @@ sub CurrentUser  {
   return ($self->{'user'});
 }
 # }}}
-    
-# {{{ sub _Handle
-sub _Handle  {
-  my $self = shift;
-  return($RT::Handle);
-}
-# }}}
+
 1;
 
 
