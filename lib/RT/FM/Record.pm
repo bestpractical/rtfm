@@ -80,9 +80,9 @@ sub Load {
     my $id = shift;
 
     if ($id =~ /^(\d+)$/) {
-        $self->SUPER::Load($id);
+        return $self->SUPER::Load($id);
     } else {
-        $self->LoadByCols( Name => $id);
+        return $self->LoadByCols( Name => $id);
     }
 }
 
@@ -103,9 +103,9 @@ sub _ClassAccessible {
     my $self = shift;
 
     if ($RT::VERSION =~ /^3.0/)  {
-        $self->_CoreAccessible(); 
+        return $self->_CoreAccessible(); 
     } else  {
-        $self->SUPER::_ClassAccessible(); 
+        return $self->SUPER::_ClassAccessible(); 
     }
 }
 

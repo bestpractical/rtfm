@@ -84,8 +84,8 @@ sub LimitToObject {
 
     $self->Limit( FIELD => 'ObjectType',
 		  VALUE => ref($object));
-    $self->Limit( FIELD => 'ObjectId',
-                  VALUE => $object->Id);
+    return $self->Limit( FIELD => 'ObjectId',
+                         VALUE => $object->Id);
 
 }
 

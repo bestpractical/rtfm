@@ -73,6 +73,7 @@ sub LimitToObject {
                  SUBCLAUSE => $subclause,
                  ENTRYAGGREGATOR => 'AND');
     $self->_CloseParen($subclause);
+    return;
 }
 
 # }}}
@@ -91,8 +92,8 @@ sub LimitToKids {
     my $self = shift;
     my $topic = shift;
     
-    $self->Limit(FIELD => 'Parent',
-                 VALUE => $topic);
+    return $self->Limit(FIELD => 'Parent',
+                        VALUE => $topic);
 }
 
 # }}}

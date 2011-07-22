@@ -367,7 +367,7 @@ sub DeleteLink {
         return ( 0, $self->loc("Permission Denied") );
     }
 
-    $self->_DeleteLink(%args);
+    return $self->_DeleteLink(%args);
 }
 
 sub AddLink {
@@ -401,7 +401,7 @@ sub AddLink {
     }
 
 
-    $self->_AddLink(%args);
+    return $self->_AddLink(%args);
 }
 
 sub URI {
@@ -591,7 +591,7 @@ sub _Value {
 # }}}
 
 sub CustomFieldLookupType {
-    "RT::FM::Class-RT::FM::Article";
+    return "RT::FM::Class-RT::FM::Article";
 }
 
 # _LookupId is the id of the toplevel type object the customfield is joined to

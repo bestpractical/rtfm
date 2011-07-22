@@ -78,7 +78,7 @@ sub _Init {
   my $self = shift; 
 
   $self->Table('FM_ObjectTopics');
-  $self->SUPER::_Init(@_);
+  return $self->SUPER::_Init(@_);
 }
 
 
@@ -106,7 +106,7 @@ sub Create {
                 ObjectId => '0',
 
 		  @_);
-    $self->SUPER::Create(
+    return $self->SUPER::Create(
                          Topic => $args{'Topic'},
                          ObjectType => $args{'ObjectType'},
                          ObjectId => $args{'ObjectId'},
@@ -195,7 +195,7 @@ Returns (1, 'Status message') on success and (0, 'Error Message') on failure.
 
 
 sub _CoreAccessible {
-    {
+    return {
      
         id =>
 		{read => 1, type => 'int(11)', default => ''},

@@ -100,9 +100,10 @@ sub Limit {
         foreach my $v (@values) {
             $self->SUPER::Limit( %ARGS, VALUE => $v );
         }
+        return;
     }
     else {
-        $self->SUPER::Limit(%ARGS);
+        return $self->SUPER::Limit(%ARGS);
     }
 }
 
@@ -123,7 +124,7 @@ sub LimitName {
         @_
     );
 
-    $self->Limit(%args);
+    return $self->Limit(%args);
 
 }
 
@@ -144,7 +145,7 @@ sub LimitSummary {
         @_
     );
 
-    $self->Limit(%args);
+    return $self->Limit(%args);
 
 }
 
@@ -157,7 +158,7 @@ sub LimitCreated {
         @_
     );
 
-    $self->Limit(%args);
+    return $self->Limit(%args);
 
 }
 
@@ -170,7 +171,7 @@ sub LimitCreatedBy {
         @_
     );
 
-    $self->Limit(%args);
+    return $self->Limit(%args);
 
 }
 
@@ -184,7 +185,7 @@ sub LimitUpdated {
         @_
     );
 
-    $self->Limit(%args);
+    return $self->Limit(%args);
 
 }
 
@@ -197,7 +198,7 @@ sub LimitUpdatedBy {
         @_
     );
 
-    $self->Limit(%args);
+    return $self->Limit(%args);
 
 }
 
@@ -214,7 +215,7 @@ This does not recurse.
 sub LimitToParent {
     my $self   = shift;
     my $parent = shift;
-    $self->Limit(
+    return $self->Limit(
         FIELD    => 'Parent',
         OPERATOR => '=',
         VALUE    => $parent
@@ -370,6 +371,7 @@ sub LimitCustomField {
             SUBCLAUSE       => $clause,
         );
     }
+    return;
 }
 
 # }}}
@@ -393,7 +395,7 @@ sub LimitTopics {
         FIELD => 'ObjectType',
         VALUE => 'RT::FM::Article',
     );
-    $self->Join(
+    return $self->Join(
         ALIAS1 => 'main',
         FIELD1 => 'id',
         ALIAS2 => $topics,
@@ -424,7 +426,7 @@ sub LimitRefersTo {
         VALUE => $uri_obj->URI
     );
 
-    $self->Join(
+    return $self->Join(
         ALIAS1 => 'main',
         FIELD1 => 'URI',
         ALIAS2 => $links,
@@ -456,7 +458,7 @@ sub LimitReferredToBy {
         VALUE => $uri_obj->URI
     );
 
-    $self->Join(
+    return $self->Join(
         ALIAS1 => 'main',
         FIELD1 => 'URI',
         ALIAS2 => $links,

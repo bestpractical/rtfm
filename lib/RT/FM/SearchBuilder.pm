@@ -76,9 +76,11 @@ Only find items that haven\'t been disabled
 sub LimitToEnabled {
     my $self = shift;
     
-    $self->Limit( FIELD => 'Disabled',
-		  VALUE => '0',
-		  OPERATOR => '=' );
+    return $self->Limit(
+        FIELD => 'Disabled',
+        VALUE => '0',
+        OPERATOR => '='
+    );
 }
 # }}}
 
@@ -94,10 +96,11 @@ sub LimitToDeleted {
     my $self = shift;
     
     $self->{'find_disabled_rows'} = 1;
-    $self->Limit( FIELD => 'Disabled',
-		  OPERATOR => '=',
-		  VALUE => '1'
-		);
+    return $self->Limit(
+        FIELD => 'Disabled',
+		OPERATOR => '=',
+		VALUE => '1'
+    );
 }
 # }}}
 

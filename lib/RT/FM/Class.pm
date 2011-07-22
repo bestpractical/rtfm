@@ -77,7 +77,7 @@ sub _Init {
   my $self = shift; 
 
   $self->Table('FM_Classes');
-  $self->SUPER::_Init(@_);
+  return $self->SUPER::_Init(@_);
 }
 
 
@@ -109,7 +109,7 @@ sub Create {
                 HotList => '0',
 
 		  @_);
-    $self->SUPER::Create(
+    return $self->SUPER::Create(
                          Name => $args{'Name'},
                          Description => $args{'Description'},
                          SortOrder => $args{'SortOrder'},
@@ -258,7 +258,7 @@ Returns the current value of LastUpdated.
 
 
 sub _CoreAccessible {
-    {
+    return {
      
         id =>
 		{read => 1, type => 'int(11)', default => ''},
