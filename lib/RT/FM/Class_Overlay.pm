@@ -230,6 +230,7 @@ sub ArticleCustomFields {
     if ( $self->CurrentUserHasRight('SeeClass') ) {
         $cfs->LimitToGlobalOrObjectId( $self->Id );
         $cfs->LimitToLookupType( RT::FM::Article->CustomFieldLookupType );
+        $cfs->ApplySortOrder;
     }
     return ($cfs);
 }
