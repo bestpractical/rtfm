@@ -134,7 +134,6 @@ my $version = ($dbh->selectrow_array("show variables like 'version'"))[1];
 convert_table($_) foreach @tables;
 
 print join "\n", ( map { /;$/? $_ : "$_;" } @sql_commands ), "";
-exit 0;
 
 my %alter_aggregator;
 sub convert_table {
