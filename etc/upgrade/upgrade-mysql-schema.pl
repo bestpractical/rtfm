@@ -150,6 +150,7 @@ sub convert_table {
         push @sql_commands, qq{ALTER TABLE $table\n   }.
             join(",\n   ",@{$alter_aggregator{$conversiontype}});
     }
+    return 1;
 }
 
 sub convert_column {
@@ -172,12 +173,11 @@ sub convert_column {
     return if $required_charset eq $current_charset;
 
     if ( $required_charset eq 'binary' ) {
-        char_to_binary(%info);
-    }
-    elsif ( $current_charset eq 'binary' ) {
-        binary_to_char( $required_charset, %info);
+        return char_to_binary(%info);
+    } elsif ( $current_charset eq 'binary' ) {
+        return binary_to_char( $required_charset, %info);
     } else {
-        char_to_char( $required_charset, %info);
+        return char_to_char( $required_charset, %info);
     }
 }
 
@@ -189,7 +189,7 @@ sub char_to_binary {
     my $new_type = calc_suitable_binary_type(%info);
     push @{$alter_aggregator{char_to_binary}},
         "MODIFY $column $new_type ".build_column_definition(%info);
-
+    return 1;
 }
 
 sub binary_to_char {
@@ -208,6 +208,7 @@ sub binary_to_char {
     push @{$alter_aggregator{binary_to_char}},
         "MODIFY $column ". uc($new_type) ." CHARACTER SET ". $charset
         ." ". build_column_definition(%info);
+    return 1;
 }
 
 sub char_to_char {
@@ -221,6 +222,7 @@ sub char_to_char {
     push @{$alter_aggregator{binary_to_char}},
         "MODIFY $column ". uc($new_type)." CHARACTER SET ". $charset
         ." ". build_column_definition(%info);
+    return 1;
 }
 
 sub calc_suitable_binary_type {
