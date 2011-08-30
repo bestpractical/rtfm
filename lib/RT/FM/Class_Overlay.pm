@@ -46,9 +46,9 @@
 #
 # END BPS TAGGED BLOCK }}}
 package RT::FM::Class;
-
 use strict;
 use warnings;
+
 no warnings qw/redefine/;
 
 use RT::FM::System;

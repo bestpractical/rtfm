@@ -45,6 +45,7 @@
 # those contributions and any derivatives thereof.
 #
 # END BPS TAGGED BLOCK }}}
+
 =head1 NAME
 
   RT::FM::Record - Base class for RT record objects
@@ -60,13 +61,13 @@
 =cut
 
 
+package RT::FM::Record;
 use strict;
 use warnings;
-package RT::FM::Record;
-use  base qw(RT::Record);
+
+use base qw(RT::Record);
+
 use RT::FM;
-
-
 
 =head2 Load <id | Name >
 

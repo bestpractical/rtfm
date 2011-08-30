@@ -67,15 +67,13 @@
 
 =cut
 
+package RT::FM::ObjectTopicCollection;
 use strict;
 use warnings;
-package RT::FM::ObjectTopicCollection;
-
-use RT::FM::SearchBuilder;
-use RT::FM::ObjectTopic;
 
 use base qw(RT::FM::SearchBuilder);
 
+use RT::FM::ObjectTopic;
 
 sub _Init {
     my $self = shift;

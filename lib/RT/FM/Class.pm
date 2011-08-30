@@ -65,11 +65,9 @@ RT::FM::Class
 
 =cut
 
+package RT::FM::Class;
 use strict;
 use warnings;
-package RT::FM::Class;
-use RT::FM::Record; 
-
 
 use base qw( RT::FM::Record );
 

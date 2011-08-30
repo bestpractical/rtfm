@@ -65,14 +65,13 @@ RT::FM::Article
 
 =cut
 
+package RT::FM::Article;
 use strict;
 use warnings;
-package RT::FM::Article;
-use RT::FM::Record; 
-use RT::FM::Class;
-
 
 use base qw( RT::FM::Record );
+
+use RT::FM::Class;
 
 sub _Init {
   my $self = shift; 

@@ -46,8 +46,8 @@
 #
 # END BPS TAGGED BLOCK }}}
 package RT::FM::Topic;
-
 use strict;
+use warnings;
 no warnings qw(redefine);
 
 # {{{ Create

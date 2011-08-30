@@ -67,15 +67,13 @@
 
 =cut
 
+package RT::FM::ArticleCollection;
 use strict;
 use warnings;
-package RT::FM::ArticleCollection;
-
-use RT::FM::SearchBuilder;
-use RT::FM::Article;
 
 use base qw(RT::FM::SearchBuilder);
 
+use RT::FM::Article;
 
 sub _Init {
     my $self = shift;

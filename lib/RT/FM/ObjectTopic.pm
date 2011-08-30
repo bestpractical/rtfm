@@ -65,14 +65,13 @@ RT::FM::ObjectTopic
 
 =cut
 
+package RT::FM::ObjectTopic;
 use strict;
 use warnings;
-package RT::FM::ObjectTopic;
-use RT::FM::Record; 
-use RT::FM::Topic;
-
 
 use base qw( RT::FM::Record );
+
+use RT::FM::Topic;
 
 sub _Init {
   my $self = shift; 

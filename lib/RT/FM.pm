@@ -46,7 +46,6 @@
 #
 # END BPS TAGGED BLOCK }}}
 package RT::FM;
-
 use 5.008003;
 use strict;
 use warnings;

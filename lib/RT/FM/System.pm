@@ -45,6 +45,7 @@
 # those contributions and any derivatives thereof.
 #
 # END BPS TAGGED BLOCK }}}
+
 =head1 NAME 
 
 RT::FM::System
@@ -63,13 +64,15 @@ In the future, there will probably be other API goodness encapsulated here.
 
 =cut
 
-
+package RT::FM::System;
 use strict;
 use warnings;
-package RT::FM::System;
-use RT::ACL;
+
 use base qw /RT::Base/;
+
 use vars qw/ $RIGHTS/;
+
+use RT::ACL;
 
 
 # Tell RT::ACE that this sort of object can get acls granted

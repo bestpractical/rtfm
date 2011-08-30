@@ -46,8 +46,9 @@
 #
 # END BPS TAGGED BLOCK }}}
 package RT::FM::TopicCollection;
-
 use strict;
+use warnings;
+
 no warnings qw(redefine);
 
 # {{{ LimitToObject

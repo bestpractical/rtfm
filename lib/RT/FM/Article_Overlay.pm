@@ -46,8 +46,8 @@
 #
 # END BPS TAGGED BLOCK }}}
 package RT::FM::Article;
-
 use strict;
+use warnings;
 
 no warnings qw/redefine/;
 

@@ -65,11 +65,9 @@ RT::FM::Topic
 
 =cut
 
+package RT::FM::Topic;
 use strict;
 use warnings;
-package RT::FM::Topic;
-use RT::FM::Record; 
-
 
 use base qw( RT::FM::Record );
 

@@ -45,9 +45,9 @@
 # those contributions and any derivatives thereof.
 #
 # END BPS TAGGED BLOCK }}}
-use strict;
-
 package RT::FM::ClassCollection;
+use strict;
+use warnings;
 
 no warnings qw/redefine/;
 

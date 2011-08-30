@@ -45,6 +45,7 @@
 # those contributions and any derivatives thereof.
 #
 # END BPS TAGGED BLOCK }}}
+
 =head1 NAME
 
   RT::FM::SearchBuilder - a baseclass for RT collection objects
@@ -58,10 +59,12 @@
 
 =cut
 
+package RT::FM::SearchBuilder;
 use strict;
 use warnings;
-package RT::FM::SearchBuilder;
+
 use base qw(RT::SearchBuilder);
+
 use RT::FM;
 
 

@@ -67,15 +67,13 @@
 
 =cut
 
+package RT::FM::ClassCollection;
 use strict;
 use warnings;
-package RT::FM::ClassCollection;
-
-use RT::FM::SearchBuilder;
-use RT::FM::Class;
 
 use base qw(RT::FM::SearchBuilder);
 
+use RT::FM::Class;
 
 sub _Init {
     my $self = shift;
