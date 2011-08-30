@@ -1,3 +1,4 @@
+use warnings;
 # This module is intended to be used to set RTFM options.
 # It is loaded after RT_Config.pm
 #
