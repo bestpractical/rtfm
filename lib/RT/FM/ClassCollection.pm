@@ -102,18 +102,7 @@ sub NewItem {
     return(RT::FM::Class->new($self->CurrentUser));
 }
 
-        eval "require RT::FM::ClassCollection_Overlay";
-        if ($@ && $@ !~ /^Can't locate/) {
-            die $@;
-        };
-
-        eval "require RT::FM::ClassCollection_Local";
-        if ($@ && $@ !~ /^Can't locate/) {
-            die $@;
-        };
-
-
-
+RT::FM->ImportOverlays;
 
 =head1 SEE ALSO
 

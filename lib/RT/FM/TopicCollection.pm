@@ -96,18 +96,7 @@ sub NewItem {
     return(RT::FM::Topic->new($self->CurrentUser));
 }
 
-        eval "require RT::FM::TopicCollection_Overlay";
-        if ($@ && $@ !~ /^Can't locate/) {
-            die $@;
-        };
-
-        eval "require RT::FM::TopicCollection_Local";
-        if ($@ && $@ !~ /^Can't locate/) {
-            die $@;
-        };
-
-
-
+RT::FM->ImportOverlays;
 
 =head1 SEE ALSO
 

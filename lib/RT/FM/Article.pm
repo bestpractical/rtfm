@@ -322,18 +322,7 @@ sub _CoreAccessible {
 };
 
 
-        eval "require RT::FM::Article_Overlay";
-        if ($@ && $@ !~ /^Can't locate/) {
-            die $@;
-        };
-
-        eval "require RT::FM::Article_Local";
-        if ($@ && $@ !~ /^Can't locate/) {
-            die $@;
-        };
-
-
-
+RT::FM->ImportOverlays;
 
 =head1 SEE ALSO
 

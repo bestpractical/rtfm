@@ -102,17 +102,8 @@ sub NewItem {
     return(RT::FM::Article->new($self->CurrentUser));
 }
 
-        eval "require RT::FM::ArticleCollection_Overlay";
-        if ($@ && $@ !~ /^Can't locate/) {
-            die $@;
-        };
 
-        eval "require RT::FM::ArticleCollection_Local";
-        if ($@ && $@ !~ /^Can't locate/) {
-            die $@;
-        };
-
-
+RT::FM->ImportOverlays;
 
 
 =head1 SEE ALSO
