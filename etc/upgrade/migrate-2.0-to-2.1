@@ -46,14 +46,16 @@
 # those contributions and any derivatives thereof.
 #
 # END BPS TAGGED BLOCK }}}
+
+use strict;
+use warnings;
+
 use RT;
 RT::LoadConfig;
 RT::Init;
 use RT::FM::CustomFieldCollection;
 use Data::Dumper;
 
-use strict;
-use warnings;
 
 my $cf_data;
 my @aces_to_delete;
