@@ -5,7 +5,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 1.00'
+generated_by: 'Module::Install version 1.01'
 license: gpl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -21,7 +21,6 @@ no_index:
 requires:
   HTML::FormatText: 0
   HTML::TreeBuilder: 0
-  RT: 3.004002
   Text::WikiFormat: 0
   Time::ParseDate: 0
   Tree::Simple: 0
