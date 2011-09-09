@@ -9,12 +9,14 @@ etc/acl.Pg
 etc/drop_schema.mysql
 etc/drop_schema.Oracle
 etc/drop_schema.Pg
+etc/drop_schema.SQLite
 etc/initial_data/dyndns
 etc/RTFM_Config.pm
 etc/schema.mysql
 etc/schema.mysql-4.1
 etc/schema.Oracle
 etc/schema.Pg
+etc/schema.SQLite
 etc/upgrade/2.1.0/acl.mysql
 etc/upgrade/2.1.0/acl.Oracle
 etc/upgrade/2.1.0/acl.Pg
@@ -43,6 +45,7 @@ html/Admin/RTFM/Classes/CustomFields.html
 html/Admin/RTFM/Classes/GroupRights.html
 html/Admin/RTFM/Classes/index.html
 html/Admin/RTFM/Classes/Modify.html
+html/Admin/RTFM/Classes/Objects.html
 html/Admin/RTFM/Classes/Topics.html
 html/Admin/RTFM/Classes/UserRights.html
 html/Admin/RTFM/Elements/ClassTabs
@@ -63,6 +66,7 @@ html/Callbacks/RTFM/autohandler/Default
 html/Callbacks/RTFM/Elements/EditLinks/ExtraLinkInstructions
 html/Callbacks/RTFM/Elements/Header/Head
 html/Callbacks/RTFM/Elements/MessageBox/Default
+html/Callbacks/RTFM/Elements/ShowSearch/ModifySearch
 html/Callbacks/RTFM/Elements/Tabs/Default
 html/Callbacks/RTFM/RTIR/Elements/Tabs/Default
 html/Callbacks/RTFM/SelfService/Elements/Tabs/Default
@@ -70,6 +74,7 @@ html/Callbacks/RTFM/Ticket/Create.html/BeforeCreate
 html/Callbacks/RTFM/Ticket/Create.html/BeforeMessageBox
 html/Callbacks/RTFM/Ticket/Elements/Tabs/Default
 html/Callbacks/RTFM/Ticket/Update.html/BeforeMessageBox
+html/Elements/RT__FM__ArticleCollection/ColumnMap
 html/Elements/RT__FM__ClassCollection/ColumnMap
 html/NoAuth/webrtfm.css
 html/RTFM/Article/Delete.html
@@ -110,6 +115,7 @@ html/RTFM/Elements/Tabs
 html/RTFM/Elements/UpdatedArticles
 html/RTFM/index.html
 html/RTFM/Topics.html
+html/Search/Article.html
 html/Search/Elements/Article
 html/SelfService/Article/autohandler
 html/SelfService/Article/Display.html
@@ -126,6 +132,7 @@ inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/RTx.pm
 inc/Module/Install/RTx/Factory.pm
+inc/Module/Install/Substitute.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/RT/FM.pm
@@ -138,6 +145,10 @@ lib/RT/FM/Class_Overlay.pm
 lib/RT/FM/ClassCollection.pm
 lib/RT/FM/ClassCollection_Overlay.pm
 lib/RT/FM/Introduction.pod
+lib/RT/FM/ObjectClass.pm
+lib/RT/FM/ObjectClass_Overlay.pm
+lib/RT/FM/ObjectClassCollection.pm
+lib/RT/FM/ObjectClassCollection_Overlay.pm
 lib/RT/FM/ObjectTopic.pm
 lib/RT/FM/ObjectTopicCollection.pm
 lib/RT/FM/ObjectTopicCollection_Overlay.pm
@@ -166,11 +177,13 @@ t/00smoke.t
 t/04interface.t
 t/05cfsearch.t
 t/06search_interface.t
+t/10-queue-specific-class.t
 t/2basic_api.t
 t/3upload-customfields.t
 t/Article_Overlay.pm.t
 t/ArticleCollection_Overlay.pm.t
 t/Class_Overlay.pm.t
+t/lib/RT/FM/Test.pm
 t/lib/RT/FM/Test.pm.in
 t/URI_a.t
 t/URI_fsck_com_rtfm.t
