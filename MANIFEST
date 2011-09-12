@@ -10,7 +10,6 @@ etc/drop_schema.mysql
 etc/drop_schema.Oracle
 etc/drop_schema.Pg
 etc/drop_schema.SQLite
-etc/initial_data/dyndns
 etc/RTFM_Config.pm
 etc/schema.mysql
 etc/schema.mysql-4.1
@@ -93,7 +92,6 @@ html/RTFM/Article/Elements/ShowHistory
 html/RTFM/Article/Elements/ShowLinks
 html/RTFM/Article/Elements/ShowSavedSearches
 html/RTFM/Article/Elements/ShowSearchCriteria
-html/RTFM/Article/Elements/ShowSearchResults
 html/RTFM/Article/Elements/ShowTopics
 html/RTFM/Article/Elements/Tabs
 html/RTFM/Article/ExtractFromTicket.html
