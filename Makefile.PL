@@ -13,6 +13,14 @@ requires(
     'HTML::FormatText'  => 0,
 );
 requires_rt('3.4.2');
+{
+    my @v = split /\./, "$RT::VERSION";
+    if ($v[0] >= 4) {
+        die "\n\nRTFM does not work with RT 4 (you have $RT::VERSION).
+RTFM has been included in RT 4 as Articles.  
+See RT's documentation for upgrading from RTFM to Articles or using the Articles functionality.\n";
+    }
+}
 auto_install();
 
 WriteAll();
