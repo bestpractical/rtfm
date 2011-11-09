@@ -2,6 +2,11 @@ RTFM (The RT FAQ Manager) is a tool for maintaining an organizational
 knowledgebase. Out of the box, it integrates with RT 3.4.2 or later
 (Also available from bestpractical.com)
 
+If you are running RT 4, you should not install RTFM.  RT 4.0.0 shipped
+with Articles, which includes all of the functionality of RTFM along with
+some new features.  If you were using RTFM with an older version of RTFM,
+RT now contains upgrade instructions for migrating your data.
+
 Best Practical sells support and customization for RT and RTFM.  Feel
 free to contact us at sales@bestpractical.com if you have any
 questions about our service offerings.
