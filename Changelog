@@ -3,6 +3,20 @@
 FEATURES
 ========
  * Add RTFM_HideArticleSearchOnReplyCreate config var
+ * Auto-submit when an "select an article to include" is chosen
+
+BUG
+===
+ * Limit the width of "select an article to include" drop-down
+ * Postgres ACL script works with usernames requiring quoting
+ * Allow CFs to be globally assigned to Classes
+ * Note that RTFM searches cannot be displayed like RT searches
+ * RT 3.8.8 compatibility when assigning CFs to Classes
+
+PO
+==
+ * Updated Spanish localization
+
 
 2.4.2
 
