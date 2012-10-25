@@ -98,7 +98,7 @@ sub Create {
         @_
     );
 
-    my $class = RT::FM::Class->new($RT::SystemUser);
+    my $class = RT::FM::Class->new( $self->CurrentUser );
     $class->Load( $args{'Class'} );
     unless ( $class->Id ) {
         return ( 0, $self->loc('Invalid Class') );
