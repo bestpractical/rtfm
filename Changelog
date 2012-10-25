@@ -1,3 +1,10 @@
+2.4.5
+
+SECURITY
+========
+* Close a vulnerability that allowed users to create Articles in any Class.
+  This resolves CVE-2012-4731.
+
 2.4.4
 
 SECURITY
