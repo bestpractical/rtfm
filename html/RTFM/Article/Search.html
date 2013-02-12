@@ -253,7 +253,7 @@ else {
 }
 
 my %dates;
-foreach my $date qw(Created< Created> LastUpdated< LastUpdated>) {
+foreach my $date (qw(Created< Created> LastUpdated< LastUpdated>)) {
     next unless ( $ARGS{$date} );
     my $seconds = parsedate( $ARGS{$date}, FUZZY => 1, PREFER_PAST => 1 );
     my $date_obj = RT::Date->new( $session{'CurrentUser'} );
@@ -407,7 +407,7 @@ if ($ARGS{'Article!~'}) {
                       OPERATOR => 'NOT LIKE' );
 }
 
-foreach my $field qw(Name Summary Class) {
+foreach my $field (qw(Name Summary Class)) {
 
    my @MatchLike = (ref $ARGS{ $field."~" } eq 'ARRAY' ) ? @{ $ARGS{ $field."~" } } : ( $ARGS{$field."~" } );
    my @NoMatchLike = (ref $ARGS{ $field."!~" } eq 'ARRAY' ) ? @{ $ARGS{ $field."!~" } } : ( $ARGS{$field."!~" } );
