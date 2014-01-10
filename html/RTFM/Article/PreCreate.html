@@ -53,9 +53,11 @@
 % $Classes->LimitToEnabled();
 % my $have_classes = 0;
 % while (my $Class = $Classes->Next) {
+% if ( $Class->CurrentUserHasRight('CreateArticle') ) {
 % $have_classes++;
 % my $qs = $m->comp("/Elements/QueryString", %ARGS, Class=> $Class->Id);
 <li><a href="Edit.html?<% $qs|n %>"><&|/l, $Class->Name &>in class [_1]</&></a></li>
+% }
 % }
 </ul>
 % unless ( $have_classes ) {
